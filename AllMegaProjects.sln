@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EToNth", "EToNth\EToNth.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PiToNth", "PiToNth\PiToNth.vcxproj", "{0BE52BD6-25DA-47E1-B180-F7C03411794C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NearestFibonacci", "NearestFibonacci\NearestFibonacci.vcxproj", "{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{0BE52BD6-25DA-47E1-B180-F7C03411794C}.Release|x64.Build.0 = Release|x64
 		{0BE52BD6-25DA-47E1-B180-F7C03411794C}.Release|x86.ActiveCfg = Release|Win32
 		{0BE52BD6-25DA-47E1-B180-F7C03411794C}.Release|x86.Build.0 = Release|Win32
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Debug|x64.ActiveCfg = Debug|x64
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Debug|x64.Build.0 = Debug|x64
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Debug|x86.ActiveCfg = Debug|Win32
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Debug|x86.Build.0 = Debug|Win32
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Release|x64.ActiveCfg = Release|x64
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Release|x64.Build.0 = Release|x64
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Release|x86.ActiveCfg = Release|Win32
+		{8C438A1E-5ABA-4C09-A8EF-94306A26A2A3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
