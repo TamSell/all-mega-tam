@@ -7,16 +7,9 @@ int printNextPrime(int pastPrime)
 	bool check = false;
 	int i;
 
-	if (pastPrime == 2 || pastPrime == 3)
-	{
-		std::cout << "Next Prime: " << pastPrime++ << std::endl;
-		return pastPrime;
-	}
-
-
 	for (i = pastPrime + 1; i < pastPrime + 10; ++i)
 	{
-		for (int j = 3; j < i; ++j)
+		for (int j = 2; j < i; ++j)
 		{
 			if (i % j == 0)
 			{
@@ -39,20 +32,16 @@ int printNextPrime(int pastPrime)
 int main()
 {
 	std::string input;
-	int primeHolder;
+	int primeHolder = 1;
 
 	std::cout << "Please press enter to find the next prime number, to stop enter exit: \n";
 
 	std::getline(std::cin, input);
 
-	primeHolder = 2;
 	while (input != "exit")
 	{
 		primeHolder = printNextPrime(primeHolder);
 		std::getline(std::cin, input);
 	}
-
-
-
 
 }
