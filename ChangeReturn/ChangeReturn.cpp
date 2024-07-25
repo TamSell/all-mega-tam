@@ -1,20 +1,110 @@
-// ChangeReturn.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string>
+#include <istream>
+#include <math.h>
+
+std::string takeInput(std::string message)
+{
+	std::string input;
+
+	std::cout << message << ": ";
+
+	while (!std::getline(std::cin, input))
+	{
+		std::cout << "\nNot a valid input please try again: \n";
+	}
+
+	std::cout << '\n';
+
+	return input;
+}
+
+
+void calculateChange(double cost, double spent)
+{
+	int change;
+	change = (100 * (spent - cost));
+
+
+	if (change < 0) {
+		std::cout << "You did not input enough money to cover the purchase cost \n";
+		return;
+	}
+	else if (change == 0) {
+		std::cout << "You paid the exact amount \n";
+		return;
+	}
+
+	std::cout << "Total Change: " << double(change) / 100 << '\n';
+
+	int totPen = 0;
+	int totNick = 0;
+	int totDime = 0;
+	int totQuater = 0;
+	int totDollar = 0;
+
+	while (change != 0)
+	{
+		if (change  - 100 >= 0) {
+			change -= 100;
+			++totDollar;
+		}
+		else if (change - 50 >= 0) {
+			change -= 50;
+			++totNick;
+		}
+		else if (change - 25 >= 0) {
+			change -= 25;
+
+			++totQuater;
+		}
+		else if (change - 10 >= 0) {
+			change -= 10;
+
+			++totDime;
+		}
+		else if (change - 5 >= 0) {
+			change -= 5;
+
+			++totNick;
+		}
+		else if (change - 1 >= 0) {
+			change -= 1;
+
+			++totPen;
+		}
+	}
+
+	std::cout << "Num of each Change: \n" << "Dollars: " << totDollar << "\nQuaters: " << totQuater << "\nDimes: " << totDime << "\nNickles: " << totNick << "\nPennies: " << totPen << '\n' << '\n';
+
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	double itemCost = 0;
+	double moneyGiven = 0;
+	double changTot = 0;
+	std::string userInput = "";
+	std::string whileClose = "exit";
+	std::cout << "\t\t This is a change return calculator, please follow the on screen instructions or enter exit at any time to quit the program \n\n";
+
+	while (1)
+	{
+		userInput = takeInput("Please enter the cost of an item");
+		if (userInput == "exit") {
+			break;
+		}
+		else {
+			itemCost = stof(userInput);
+		}
+		userInput = takeInput("Please enter the amount of change you wish to use to purchase");
+		if (userInput == "exit") {
+			break;
+		}
+		else {
+			moneyGiven = stof(userInput);
+		}
+		calculateChange(itemCost, moneyGiven);
+	}
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
